@@ -20,16 +20,16 @@ end
 # Retrieve the project name from a path
 def getProjectFromPath(path)
   folders = path.split('/')
-  return folders[folders.index(".git") - 1]
+  return folders[folders.index("refs") - 1]
 end
 
 # Do something with a change (get last commit message)
 def act(base, relative)
   project = getProjectFromPath(base)
-  
+
   # Create new repo and read last commit
   repo = Grit::Repo.new(File.join(@@repo_folder, project))
-  puts "#{repo.commits.first.author.email} in #{project}: #{repo.commits.first.message}"
+  puts "#{repo.commits.first.author.name} <#{repo.commits.first.author.email}> in #{project}: #{repo.commits.first.message}"
 
 #  repo.commits.each do |commit|
 #    puts "#{commit.author.email}: #{commit.message}"
@@ -38,6 +38,7 @@ def act(base, relative)
 #    end
 #  end
 end
+
 
 # Get a list of all repos to be watched
 repos = Pathname.glob("#{@@repo_folder}/*/")
