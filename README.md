@@ -16,5 +16,5 @@ FSSM might tell you to install additional platform specific gems.
 
 Simple append the path to your repos and watch.
 
-	$ ruby ./watch /home/git/repositores
+	$ ruby watch.rb /home/git/repositores
 
