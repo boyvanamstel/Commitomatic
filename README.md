@@ -4,12 +4,15 @@ Commitomatic is an experiment. It watches your git repos for changes and reports
 
 # Requirements
 
-- Grit https://github.com/mojombo/grit
-	
+Install Grit:
+
 	sudo gem install grit
+
+FSSM might tell you to install additional platform specific gems.
 
 # Running it
 
 Simple append the path to your repos and watch.
 
 	$ ruby ./watch /home/git/repositores
+

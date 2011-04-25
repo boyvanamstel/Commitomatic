@@ -45,7 +45,7 @@ repos = Pathname.glob("#{@@repo_folder}/*/")
 # Setup FSSM to watch the .git/refs/heads folder for changes
 FSSM.monitor do
   repos.each do |repo|
-    path File.join(repo, '.git', 'refs', 'heads') do
+    path File.join(repo, 'refs', 'heads') do
       update { |b,r| act(b,r) } 
       delete { |b,r| act(b,r) }
       create { |b,r| act(b,r) }
